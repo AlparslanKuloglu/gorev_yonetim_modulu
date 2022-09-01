@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+	<title>Görev Yönetim Modülü</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/355e504b58.js" crossorigin="anonymous"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+
+	<link
+	rel="stylesheet"
+	href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+	/>
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+<div style="display: flex;" >
+
+
+
+
+
+<div style="margin-top: 10px;">
+  <h1>
+
+    
+    <h1 style="color:#667aff ;"> Kayıtlı Robotlar </h1>
+   
+   
+
+  </h1>
+
+  <% for (let i =0 ; i < robots.length; i++ ) { %> 
+
+    <div style="color: white; padding: 15px 10px; background-color: #667aff; border-radius: 10px; " >Model:<%= robots[i].model %> <p></p> ID:<%= robots[i]._id %> <p></p> Battery Info:<%= robots[i].batteryInfo %> 
+    
+      <form style="width: 70%;" action="/panel" >
+	
+        <input type="hidden" name="username" value="PatikaRobotics">
+        <input type="hidden" name="room" value=<%=robots[i]._id  %>  >
+        <button style="margin-top: 15px;"  type="submit" >ROBOTU YÖNET</button>
+      </form>
+    
+    </div>
+    <p></p>
+	
+    <% } %>
+
+</div>
+
+  <form style="color: white; padding: 15px 10px; background-color: #667aff; border-radius: 10px; max-height: 100px; margin-top: 100px; margin-left: 300px; " method="post" action="/robots/add">
+    <div >
+        <div>
+            <input type="text" name="model" id="model" class="form-control" placeholder="Robot model">
+        </div>
+        <div class=>
+            <input type="text" name="batteryInfo" id="batteryInfo" class="form-control" placeholder="Battery info">
+        </div>
+  
+        <div style="margin: top 20px;" >
+            <button style="margin-top: 20px;" type="submit" value="LOGIN" id="submit">Robot Ekle</button>
+        </div>
+    </div>
+  </form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script src="https://unpkg.com/swiper@8.2.6/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+	<script src="js/main.js"></script>
+
+
+
+</body>
+</html>
